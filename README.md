@@ -19,3 +19,25 @@ Note that it doesn't have to be installed on the same server as your Home Assist
 The controller is hard coded as Node 001. If this isn't correct, it can be changed in the source code around line 12. It might make sense to run a z-wave network heal before running this tool.  
 `php -f zwave-map.php <OZW.log> <zwcfg.xml> <image.svg>`  
 
+### Using Docker
+
+To build the image run
+
+`docker build .`
+
+Then, you can run a container on the data.
+
+The container takes the following env arguments (with defaults):
+
+`LOG` (default: `OZW_Log.log`)
+`CFG` (default: `zwcfg.log`)
+`OUTPUT` (default: `graph.svg`)
+
+Input and output must be in the volume `/data`.
+
+Example:
+
+
+`docker run -v ~/zwave:/data -e CFG=zwcfg_<hash>.xml -it <container id>`
+
+
