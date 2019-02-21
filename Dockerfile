@@ -19,7 +19,7 @@ WORKDIR /code
 
 VOLUME /data
 
-ENV LOG=OZW_Log.log
+ENV LOG=OZW_Log.txt
 ENV CFG=zwcfg.xml
 ENV OUTPUT=graph.svg
 
