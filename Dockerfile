@@ -1,12 +1,10 @@
-FROM debian:jessie
+FROM php:cli-stretch
 MAINTAINER torkildr
 
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && \
       apt-get install -y --no-install-recommends \
-        php5-cli \
-        php-pear \
         graphviz \
         ca-certificates \
         curl
